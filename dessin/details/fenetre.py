@@ -5,7 +5,9 @@ class fenetre:
         up()
         goto(x,y)
         down()
-        fillcolor("#ffffff")
+        color("black")
+        fillcolor("#bffffa")
+        
         begin_fill()
         for _ in range(4):
             
@@ -13,5 +15,16 @@ class fenetre:
             left(90)
         end_fill()
     
-    def porte():
-        print("JE FAIS UNE PORTE")
+    def porte(x,y,colors):
+        up()
+        goto(x,y)
+        down()
+        color("white")
+        fillcolor(colors)
+        begin_fill()
+        for _ in range(2):
+            forward(25)
+            left(90)
+            forward(60)
+            left(90)
+        end_fill()

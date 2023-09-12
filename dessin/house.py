@@ -4,7 +4,7 @@ from .utility.color import color
 class house :
     def create(x) -> None:
         up()
-        width(1)
+        width(2)
         down()
         left(90)
         begin_fill()
@@ -22,8 +22,9 @@ class house :
         down()
         
         fillcolor(color.random())
-        i = 0
         for _ in range(etages):
             house.create(x)
             right(90)
-    
+        width(5)
+        forward(125)
+        width(1)
