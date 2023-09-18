@@ -7,6 +7,8 @@ from dessin.utility.color import color
 from dessin.details.voiture import voiture
 from dessin.details.passage import passage
 from dessin.details.soleil import soleil
+from dessin.Woippy.text import woippy
+
 
 def main(vit:int):
     """
@@ -79,9 +81,9 @@ def main(vit:int):
 
 
 
+woippy.text()
 
-
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     vitesse = int(input("Vitesse\n >"))
     while True:
         clearscreen()
@@ -91,4 +93,5 @@ if __name__ == "__main__":
         for i in range(5):
             voiture()
         
-        mainloop()
+        mainloop()"""
+
