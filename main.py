@@ -4,10 +4,22 @@ from dessin.details.fenetre import fenetre
 from random import randint
 from turtle import *
 from dessin.utility.color import color
+from dessin.details.voiture import voiture
+from dessin.details.passage import passage
+from dessin.details.soleil import soleil
 
-def main():
-    speed(100)
-    route()
+def main(vit:int):
+    """
+    Fonction main permettant de générer la rue
+    vit (int) : vitesse de generation de la rue
+    return (void)
+    """
+    ht()
+
+    speed(vit)
+    soleil.create()
+    passage()
+    route(-250)
     x = -325
     y1 = -250
     nbetage = list()
@@ -18,7 +30,7 @@ def main():
         x += 150
     y1 += 37
     up()
-    print(nbetage)
+    "print(nbetage)"
 
     x1 = -325
 
@@ -26,16 +38,18 @@ def main():
     for immeuble in nbetage:
         """
         immeuble = nombre d etage sur l immeuble actuel
-        a chaque immeuble on va...
+        a chaque immeuble on va faire une porte temps que le rez de chaussé n'a pas au moins une porte
+        return (void)
         """
         index = 0
         porte = False
         while immeuble != 0:
             xb = x1
+            pos = randint(0,2)
             for i in range(3):
-                if index == 0:
-                    if i == 2:
-                        if (not(porte)):
+                if(index == 0):
+                    if(i == pos):
+                        if(not(porte)):
                             x1 = x1+12
                             fenetre.porte(x1,y1-35,color.random())
                             porte = True
@@ -44,30 +58,14 @@ def main():
                             x1 = x1+12
                             fenetre.create(x1,y1)
                             x1 = x1+25
-                            end_fill()
                     else:
-                        if(not(porte)):
-                            if(randint(1,3) == 3):
-                                x1 = x1+12
-                                fenetre.porte(x1,y1-35,color.random())
-                                porte = True
-                                x1 = x1+25
-                            else:
-                                x1 = x1+12
-                                fenetre.create(x1,y1)
-                                x1 = x1+25
-                                end_fill()
-                        else:
-                            x1 = x1+12
-                            fenetre.create(x1,y1)
-                            x1 = x1+25
-                            end_fill()
-                else:
                         x1 = x1+12
                         fenetre.create(x1,y1)
                         x1 = x1+25
-                        end_fill()
-                
+                else:
+                    x1 = x1+12
+                    fenetre.create(x1,y1)
+                    x1 = x1+25
             y1 += 100
             immeuble -= 1
             x1 = xb
@@ -75,11 +73,22 @@ def main():
 
         y1 = -250+37
         x1 += 150
+    route(-250)
+    route(-350)
 
-    route()
+
+
+
 
 
 if __name__ == "__main__":
+    vitesse = int(input("Vitesse\n >"))
     while True:
         clearscreen()
-        main()
+       
+        main(vitesse)
+        
+        for i in range(5):
+            voiture()
+        
+        mainloop()
