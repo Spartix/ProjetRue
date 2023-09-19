@@ -1,9 +1,23 @@
 from turtle import *
-from random import randint
+from random import choice, randint
 
 class voiture:
     def __init__(self) -> None:
-        self.x , self.y = randint(-300,300) , randint(-300,-250)
+        position = {
+            "x":[
+                -300,
+                -200,
+                -100,
+                100,
+                250
+            ],
+            "y":[
+                -320,
+                -250
+            ]
+        }
+        self.x , self.y = choice(position["x"]), choice(position["y"])
+
         self.create()
 
     def create(self):

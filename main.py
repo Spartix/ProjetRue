@@ -8,6 +8,7 @@ from dessin.details.voiture import voiture
 from dessin.details.passage import passage
 from dessin.details.soleil import soleil
 from dessin.Woippy.text import woippy
+from dessin.details.panneau import panneau
 
 
 def main(vit:int):
@@ -19,6 +20,7 @@ def main(vit:int):
     ht()
 
     speed(vit)
+    
     soleil.create()
     passage()
     route(-250)
@@ -77,21 +79,25 @@ def main(vit:int):
         x1 += 150
     route(-250)
     route(-350)
+    
 
 
 
 
-woippy.text()
 
-"""if __name__ == "__main__":
+if __name__ == "__main__":
     vitesse = int(input("Vitesse\n >"))
     while True:
         clearscreen()
-       
+        
         main(vitesse)
         
         for i in range(5):
             voiture()
-        
-        mainloop()"""
+        panneau().create()
+        woippy().text()
+        mainloop()
 
+
+
+99999

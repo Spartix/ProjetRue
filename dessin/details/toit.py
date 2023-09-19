@@ -22,7 +22,7 @@ class toit:
         function droit permettant de generer un toit plat
         return (Void)
         """
-        width(5)
+        width(10)
         forward(125)
         width(1)
     
