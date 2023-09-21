@@ -9,6 +9,9 @@ class panneau:
         self.y = y
 
     def create(self) -> None:
+        """
+        function generant un panneau
+        """
         x = self.x -20
         y = self.y +30
         centre = {

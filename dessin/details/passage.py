@@ -6,11 +6,14 @@ class passage:
     def __init__(self) -> None:
         self.x = randint(-350,350)
         self.y = -250
-        for i in range(5):
+        for _ in range(5):
             self.create()
             self.y -= 20
     
     def create(self):
+        '''
+        function permettant la création d'un pasage pietons
+        '''
         up()
         goto(self.x,self.y)
         down()

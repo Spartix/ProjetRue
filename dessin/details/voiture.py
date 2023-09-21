@@ -3,6 +3,9 @@ from random import choice, randint
 
 class voiture:
     def __init__(self) -> None:
+        """
+        Class voiture permettant de creer une voiture dans une position aleatoire dans sur la route
+        """
         position = {
             "x":[
                 -300,
@@ -21,6 +24,9 @@ class voiture:
         self.create()
 
     def create(self):
+        """
+        function de creation de voiture
+        """
         x , y = self.x , self.y
         up()
         goto(x,y)
@@ -44,6 +50,9 @@ class voiture:
         
 
     def roues(self):
+        """
+        function de creation des roues
+        """
         fillcolor("black")
         forward(15)
         begin_fill()

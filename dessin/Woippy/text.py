@@ -6,6 +6,9 @@ class woippy:
         self.y = 250
 
     def text(self):
+        """
+        funtion generant le nom de la rue (Woippy)
+        """
         up()
         goto(self.x,self.y)
         down()

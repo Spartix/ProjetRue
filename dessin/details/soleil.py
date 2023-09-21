@@ -6,6 +6,9 @@ from turtle import *
 class soleil:
 
     def create():
+        """
+        function de creation du soleil
+        """
         up()
         goto(randint(-300,600),150)
         down()
